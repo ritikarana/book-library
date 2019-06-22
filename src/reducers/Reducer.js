@@ -2,10 +2,14 @@ import { ADD_BOOK, DELETE_BOOK,EDIT_BOOK,UPDATE } from '../actions/types';
 const Reducer = (state = [], action) => {
   switch(action.type) {
     case ADD_BOOK:
-      return state.concat([action.data]);
+    //  console.log("ritika")
+    //console.log(action.payload.data)
+      return  state.concat([action.payload.data]);
+
     case DELETE_BOOK:
       return state.filter((book)=>book.id !== action.id);
     case EDIT_BOOK:
+      console.log(action);
       return state.map((book)=>book.id === action.id ? {...book,editing:!book.editing}:book)
     case UPDATE:
       return state.map((book)=>{

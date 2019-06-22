@@ -1,13 +1,10 @@
 
 import { ADD_BOOK, DELETE_BOOK,EDIT_BOOK } from './types';
 
-
-
-
 export const addbook = (data) => ({
+ 
   type: ADD_BOOK,
   payload: {
- 
     data: data
   }
 });

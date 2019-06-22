@@ -22,7 +22,7 @@ return (
 
   <div className="control-buttons">
     <button className="edit"
-    onClick={() => this.props.edit({ type: 'EDIT_BOOK', id: this.state.id })
+    onClick={() => this.props.dispatch({ type: 'EDIT_BOOK', id: this.state.id })
     }
     >Edit</button>
     <button className="delete"

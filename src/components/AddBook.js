@@ -21,7 +21,7 @@ class AddBook extends Component {
 handleSubmit = (e) => {
 e.preventDefault();
  const data = this.state;
- this.props.onAddBook(this.state);
+ this.props.onAddBook(data);
  
 
  this.setState({
