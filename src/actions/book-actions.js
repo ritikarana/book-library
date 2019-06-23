@@ -73,7 +73,8 @@ export function fetchBook(_id) {
 }
 
 export function updateBook(book,_id) {
-
+console.log(book);
+console.log(_id);
   return dispatch => {
     axios.post(BASE_URL+'/books/update/'+_id,book)
         .then(function (response) {

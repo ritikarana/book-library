@@ -35,6 +35,14 @@ const defaultState = {
         }
       }
   
+      case 'SAVE_BOOK': {
+        console.log("10");
+        return {
+          ...state,
+          book: action.payload.data
+        }
+      }
+
       case 'NEW_BOOK': {
         console.log("2");
         return {

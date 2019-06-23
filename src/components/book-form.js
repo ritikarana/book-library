@@ -50,7 +50,7 @@ class BookForm extends Component {
   )
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     const { handleSubmit, pristine, submitting, loading, book } = this.props;
    
     return (

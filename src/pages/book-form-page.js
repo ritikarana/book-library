@@ -12,9 +12,6 @@ class BookFormPage extends Component {
     state = {
       redirect: false
     }
-  
-
- 
 
   componentDidMount = () => {
     const { _id } = this.props.match.params;
@@ -26,12 +23,15 @@ class BookFormPage extends Component {
   }
 
   submit = (book) => {
-    if(!book._id) {
-      console.log(book)
-      return this.props.saveBook(book).then(response => this.setState({ redirect:true }))
-        .catch(err => {
-           throw new SubmissionError(this.props.errors)
-         })
+    //console.log()
+    if(!this.props.book._id) {
+     // console.log(book)
+     console.log(this.props.saveBook(book));
+      
+     return this.props.saveBook(book).then(response => this.setState({ redirect:true }))
+      //  .catch(err => {
+        //   throw new SubmissionError(this.props.errors)
+        // })
     } else {
       return this.props.updateBook(book,book._id)
         .then(response => this.setState({ redirect:true }))
@@ -55,7 +55,7 @@ class BookFormPage extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state)
+  //console.log(state)
   return {
     book: state.bookStore.book,
     errors: state.bookStore.errors
