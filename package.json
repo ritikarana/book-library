@@ -1,28 +1,38 @@
 {
-  "name": "myapp",
+  "name": "react-contact-manager",
   "version": "0.1.0",
   "private": true,
+  "description": "Basic crud react app for managing contacts",
+  "author": "Michael Wanyoike",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brandiqa/redux-crud-example.git"
+  },
   "dependencies": {
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-scripts": "2.1.8",
-    "redux": "^4.0.1",
-    "uuidv4": "^4.0.0"
+    "axios": "^0.16.0",
+    "body-parser": "^1.19.0",
+    "classnames": "^2.2.5",
+    "mddir": "^1.1.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "react-router-dom": "^4.0.0",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.0",
+    "redux-form": "^6.6.1",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.2.0",
+    "semantic-ui-css": "^2.2.10",
+    "semantic-ui-react": "^0.67.2"
+  },
+  "devDependencies": {
+    "react-scripts": "0.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  }
 }

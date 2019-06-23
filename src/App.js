@@ -1,21 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import AddBook from './container/Addbook';
-import BookList from './container/BookList';
+import { NavLink, Route,Switch } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 
 
+import BookListPage from './pages/book-list-page';
+import BookFormPage from './pages/book-form-page';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="book-container">
-         
-       <div className="left-row"><AddBook /></div> 
-        <div className="left-row"><BookList /></div> 
+      <Container>
+        <div className="ui two item menu">
+          <NavLink className="item" activeClassName="" exact to="/">Book List</NavLink>
+          <NavLink className="item" activeClassName="" exact to="/book/new">Add Book</NavLink>
         </div>
-      </div>
+        
+        <Route path="/" component={BookListPage}/>
+        <Route path="/book/new" component={BookFormPage}/>
+        <Route path="/book/edit/:_id" component={BookFormPage}/>
+      </Container>
     );
   }
 }
