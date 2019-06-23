@@ -1,4 +1,6 @@
-Redux CRUD Example : 
+
+
+Redux CRUD Example with JSON file : 
 https://github.com/ritikarana/book-library
 
 It includes all edit , create delete and update functionality
