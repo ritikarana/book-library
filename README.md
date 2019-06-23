@@ -9,7 +9,7 @@ To run this Please follow some of steps :
 
 <b>After download : </b>
 
-<b>Step 1:</b> Under this folder run  /book-library-master npm start on your command prompt
+<b>Step 1:</b> Under this folder run  /book-library-master npm start on your command prompt<br>
 After this it will run on http://localhost:3000
 
 <b>Step 2:</b> Under this folder run  /book-library-master/src node server on your command prompt
