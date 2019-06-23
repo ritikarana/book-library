@@ -15,7 +15,7 @@ class App extends Component {
           <NavLink className="item" activeClassName="" exact to="/book/new">Add Book</NavLink>
         </div>
         
-        <Route path="/" component={BookListPage}/>
+        <Route path="/" component={BookListPage} exact={true}  />
         <Route path="/book/new" component={BookFormPage}/>
         <Route path="/book/edit/:_id" component={BookFormPage}/>
       </Container>
