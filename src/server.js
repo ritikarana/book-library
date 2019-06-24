@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 
-
+/**  HANDLE CROSS ORIGIN ISSUES  */
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -26,6 +26,7 @@ app.use(function(req, res, next) {
 });
 
 
+/** GET ALL BOOKS */
 
 app.get('/books',function(req,res)
 {
@@ -33,6 +34,7 @@ app.get('/books',function(req,res)
    res.json(jsonData)
 })
 
+/** ADD BOOK AND WRITE TO JSON FILE AND RETURN CURRENT ADDED BOOK */
 app.post('/books/add',function(req,res){
    var pushdata = req.body
    console.log(pushdata);
@@ -61,7 +63,7 @@ app.post('/books/add',function(req,res){
       })
 })
 
-
+/** UPDATE BOOK AND WRITE TO JSON FILE AND RETURN CURRENT UPDATED BOOK */
 app.post('/books/update/:_id',function(req,res){
    
    const _id = parseInt(req.params._id);
@@ -88,7 +90,7 @@ app.post('/books/update/:_id',function(req,res){
       })
 })
 
-
+/** VIEW BOOK */
 app.get('/books/viewbook/:_id',function(req,res){
   const _id = parseInt(req.params._id);
   const data = fs.readFileSync('books.json');
@@ -104,7 +106,7 @@ app.get('/books/viewbook/:_id',function(req,res){
 })
 
 
-
+/** DELETE CURRENT BOOK */
 app.get('/books/delete/:_id',function(req,res){
    
   var req_id = req.params._id;
@@ -126,7 +128,7 @@ app.get('/books/delete/:_id',function(req,res){
 })
 
 
-
+/** LISTEN ON PORT NUMBER 8080 */
 
 var server = app.listen('8080',function(req,res){
    var host = server.address().address

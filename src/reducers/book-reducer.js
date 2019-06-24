@@ -1,3 +1,5 @@
+
+/** SET INTIAL STATE */
 const defaultState = {
     books: [],
     book: {},
@@ -8,8 +10,9 @@ const defaultState = {
   export default (state=defaultState, action) => {
      
     switch (action.type) {
+      /** RETURN FULL LIST OF BOOKS */
       case 'FETCH_BOOKS_FULFILLED': {
-        console.log(action);
+      //  console.log(action);
         return {
           ...state,
           books: action.payload.data,
@@ -17,9 +20,12 @@ const defaultState = {
           errors: {}
         }
       }
+
+      
   
        case 'FETCH_BOOK':
        {
+           /** RETURN STATE OF ONE BOOK */
         return {
           ...state,
           book: action.payload.data
@@ -27,6 +33,7 @@ const defaultState = {
        }
   
       case 'FETCH_BOOKS_REJECTED': {
+         /** RETURN ERRORS IF BOOK REJECTED TO UPDATE */
         console.log("1");
         return {
           ...state,
@@ -37,6 +44,7 @@ const defaultState = {
   
       case 'SAVE_BOOK': {
         console.log("10");
+         /** ADD BOOK AND RETURN SAVED BOOK */
         return {
           ...state,
           book: action.payload.data

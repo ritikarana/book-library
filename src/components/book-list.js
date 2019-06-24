@@ -36,6 +36,7 @@ export default function BookList({books, loading, errors, deleteBook}){
       </Message>
     )
 
+    /** IN BOOK CARD COMPONENT IT WILL GIVE BLOCK OF EVERY BOOK  */
   const cards = () => {
     return books.map(book => {
       return (
@@ -51,6 +52,7 @@ export default function BookList({books, loading, errors, deleteBook}){
   )
 
   return (
+   
     <div>
       { loading && loadingMessage }
       { books.length === 0 && !loading  && !errors.global && emptyMessage }

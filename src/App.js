@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { NavLink, Route,Switch } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
 
 
 import BookListPage from './pages/book-list-page';
 import BookFormPage from './pages/book-form-page';
 
+/* IMPORT ALL HIGH ODER COMPONENT AND CREATE ROUTES */
 class App extends Component {
   render() {
     return (

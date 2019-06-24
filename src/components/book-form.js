@@ -3,6 +3,8 @@ import { Form, Grid, Button } from 'semantic-ui-react';
 import { Field, reduxForm } from 'redux-form';
 import classnames from 'classnames';
 
+/** DEFINE VALIDATION ERRORS */
+
 const validate = (values) => {
   const errors = {name:{}};
   if(!values.book_name) {
@@ -33,13 +35,15 @@ const validate = (values) => {
 class BookForm extends Component {
 
     
-
-  componentWillReceiveProps = (nextProps) => { // Load book Asynchronously
+/** Load book Asynchronously */ 
+  componentWillReceiveProps = (nextProps) => { 
     const { book } = nextProps;
     if(book._id !== this.props.book._id) { // Initialize form only once
       this.props.initialize(book)
     }
   }
+
+  /** IT WILL MANAGER THE ERRORS FROM VALIDATE FUNCTION AND RENDER BASED ON RETURN ERROR OF EVERY INPUT VALIDATION  */
 
   renderField = ({ input, label, type, meta: { touched, error } }) => (
     <Form.Field className={classnames({error:touched && error})}>
@@ -48,7 +52,8 @@ class BookForm extends Component {
       {touched && error && <span className="error">{error.message}</span>}
     </Form.Field>
   )
-
+ /** RENDER THE FORM FOR EDIT AND ADD BOOK 
+  * BASED ON ID IT WILL RENDER THE FORMS */
   render() {
     //console.log(this.props)
     const { handleSubmit, pristine, submitting, loading, book } = this.props;

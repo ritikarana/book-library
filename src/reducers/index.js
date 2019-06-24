@@ -6,7 +6,7 @@ const reducers = {
   bookStore: BookReducer,
   form: formReducer
 }
-
+/* COMBINE FORM REDUCER AND BOOK REDUCER  */
 const rootReducer = combineReducers(reducers);
 
 export default rootReducer;

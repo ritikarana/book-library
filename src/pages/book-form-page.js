@@ -21,17 +21,18 @@ class BookFormPage extends Component {
       this.props.newBook();
     }
   }
+  /** if it does not find the book id from props then it will add new book else it will update the book corresponding book id with mapped action functions */
 
   submit = (book) => {
-    //console.log()
+   
     if(!this.props.book._id) {
      // console.log(book)
-     //console.log(this.props.saveBook(book));
+    // console.log(this.props.saveBook(book));
       
      return this.props.saveBook(book).then(response => this.setState({ redirect:true }))
-      // .catch(err => {
-      //     throw new SubmissionError(this.props.errors)
-      //  })
+      //  .catch(err => {
+        //   throw new SubmissionError(this.props.errors)
+        // })
     } else {
       return this.props.updateBook(book,book._id)
         .then(response => this.setState({ redirect:true }))
@@ -53,13 +54,13 @@ class BookFormPage extends Component {
     )
   }
 }
-
+/** Make Book  array available in  props and map with components */ 
 function mapStateToProps(state) {
-  //console.log(state)
+  console.log(state)
   return {
     book: state.bookStore.book,
     errors: state.bookStore.errors
   }
 }
-
+/** Map connection with actions and component  */
 export default connect(mapStateToProps, {newBook, saveBook, fetchBook, updateBook})(BookFormPage);

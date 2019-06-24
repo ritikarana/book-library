@@ -19,7 +19,7 @@ class BookListPage extends Component {
   }
 }
 
-// Make Books  array available in  props
+/** Make Books  array available in  props and map with components */ 
 function mapStateToProps(state) {
   return {
       books : state.bookStore.books,
@@ -27,5 +27,7 @@ function mapStateToProps(state) {
       errors: state.bookStore.errors
   }
 }
+
+/** Map connection with actions and component  */
 
 export default connect(mapStateToProps, {fetchBooks, deleteBook})(BookListPage);
