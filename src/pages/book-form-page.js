@@ -29,9 +29,9 @@ class BookFormPage extends Component {
      //console.log(this.props.saveBook(book));
       
      return this.props.saveBook(book).then(response => this.setState({ redirect:true }))
-       .catch(err => {
-           throw new SubmissionError(this.props.errors)
-        })
+      // .catch(err => {
+      //     throw new SubmissionError(this.props.errors)
+      //  })
     } else {
       return this.props.updateBook(book,book._id)
         .then(response => this.setState({ redirect:true }))
