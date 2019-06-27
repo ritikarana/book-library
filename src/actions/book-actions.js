@@ -131,6 +131,7 @@ export function deleteBook(_id) {
               payload: response
       
             })
+         location.reload();
         })
         .catch(function (error) {
           console.log("error",error);
