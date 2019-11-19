@@ -36,12 +36,10 @@ export function newBook() {
  /** Save book and in store it will return added book state */
 
 export function saveBook(book) {
- // console.log(book);
   return dispatch => {
 
     axios.post(BASE_URL+'/books/add',book)
         .then(function (response) {
-        // console.log(response);
           dispatch({
               type: 'SAVE_BOOK',
               payload: response
