@@ -10,7 +10,7 @@
     "url": ""
   },
   "dependencies": {
-    "axios": "^0.16.0",
+    "axios": "^0.21.1",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.5",
     "mddir": "^1.1.0",
